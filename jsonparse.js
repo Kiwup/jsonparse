@@ -378,6 +378,8 @@ proto.onToken = function (token, value) {
       } else {
         return this.parseError(token, value);
       }
+    } else if (token === COMMA) { // skip line if no value
+      this.state = KEY
     }else{
       return this.parseError(token, value);
     }
